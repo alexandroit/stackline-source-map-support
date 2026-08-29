@@ -1,0 +1,20 @@
+@stackline/source-map-support preserves source-map-support by Evan Wallace.
+
+Copyright (c) 2014 Evan Wallace. Licensed under the MIT License reproduced in
+LICENSE.
+
+CallSiteToString in source-map-support.js is copied almost verbatim from the
+V8 4.3.49 source file src/messages.js. That file states:
+
+  Copyright 2012 the V8 project authors. All rights reserved.
+
+The applicable V8 BSD 3-Clause terms are reproduced in
+LICENSES/V8-BSD-3-Clause.txt. The historical source is available at:
+https://chromium.googlesource.com/v8/v8/+/4.3.49/src/messages.js
+
+Production dependency notices are inventoried in THIRD_PARTY_LICENSES.md.
+The self-contained browser artifacts embed code from
+@jridgewell/trace-mapping, @jridgewell/resolve-uri,
+@jridgewell/sourcemap-codec (Copyright Justin Ridgewell), and
+path-browserify (Copyright (c) 2013 James Halliday). Their complete MIT texts
+are shipped in LICENSES/.

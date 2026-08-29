@@ -1,0 +1,173 @@
+{
+  "name": "@stackline/source-map-support",
+  "version": "1.0.0",
+  "description": "Compatibility-first source-map stack traces for VM, browser, and custom loader integrations",
+  "type": "commonjs",
+  "main": "./source-map-support.js",
+  "module": "./index.mjs",
+  "types": "./source-map-support.d.ts",
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./index.d.mts",
+        "require": "./source-map-support.d.cts",
+        "default": "./source-map-support.d.ts"
+      },
+      "browser": {
+        "import": "./browser-source-map-support.mjs",
+        "require": "./browser-source-map-support.js",
+        "default": "./browser-source-map-support.js"
+      },
+      "import": "./index.mjs",
+      "require": "./source-map-support.js",
+      "default": "./source-map-support.js"
+    },
+    "./source-map-support": {
+      "types": "./source-map-support.d.ts",
+      "browser": "./browser-source-map-support.js",
+      "default": "./source-map-support.js"
+    },
+    "./source-map-support.js": {
+      "types": "./source-map-support.d.ts",
+      "browser": "./browser-source-map-support.js",
+      "default": "./source-map-support.js"
+    },
+    "./register": {
+      "types": "./register.d.ts",
+      "default": "./register.js"
+    },
+    "./register.js": {
+      "types": "./register.d.ts",
+      "default": "./register.js"
+    },
+    "./register-hook-require": {
+      "types": "./register-hook-require.d.ts",
+      "default": "./register-hook-require.js"
+    },
+    "./register-hook-require.js": {
+      "types": "./register-hook-require.d.ts",
+      "default": "./register-hook-require.js"
+    },
+    "./browser-source-map-support": {
+      "types": "./browser-source-map-support.d.ts",
+      "default": "./browser-source-map-support.js"
+    },
+    "./browser-source-map-support.js": {
+      "types": "./browser-source-map-support.d.ts",
+      "default": "./browser-source-map-support.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "unpkg": "./browser-source-map-support.js",
+  "jsdelivr": "./browser-source-map-support.js",
+  "browser": {
+    "./source-map-support.js": "./browser-source-map-support.js"
+  },
+  "sideEffects": [
+    "./register.js",
+    "./register-hook-require.js",
+    "./browser-source-map-support.js"
+  ],
+  "files": [
+    "source-map-support.js",
+    "source-map-support.d.ts",
+    "source-map-support.d.cts",
+    "index.mjs",
+    "index.d.mts",
+    "register.js",
+    "register.d.ts",
+    "register-hook-require.js",
+    "register-hook-require.d.ts",
+    "browser-source-map-support.js",
+    "browser-source-map-support.mjs",
+    "browser-source-map-support.d.ts",
+    "examples",
+    "CHANGELOG.md",
+    "COMPATIBILITY_CONTRACT.md",
+    "LICENSE",
+    "LICENSES",
+    "MIGRATION.md",
+    "NOTICE",
+    "README.md",
+    "SECURITY.md",
+    "THIRD_PARTY_LICENSES.md"
+  ],
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "build": "node scripts/build.mjs",
+    "lint": "eslint source-map-support.js index.mjs register.js register-hook-require.js scripts test examples docs-site/*.js",
+    "test:upstream": "node --test test/upstream.test.cjs",
+    "test:characterization": "node --test test/characterization.test.cjs test/error-formatting.test.cjs",
+    "test:differential": "node --test test/differential.test.cjs test/sectioned-map.test.cjs",
+    "test:security": "node --test test/malformed-security.test.cjs",
+    "test:stress": "node --test test/stress.test.cjs && node --expose-gc --test test/memory.test.cjs",
+    "test:build-reproducibility": "node scripts/check-build-reproducibility.mjs",
+    "test:browser": "node scripts/check-browser.mjs",
+    "test:esm": "node test/esm.mjs",
+    "test:types": "node node_modules/typescript-3-9/bin/tsc -p test/types/tsconfig.legacy.json && node node_modules/typescript/bin/tsc -p test/types/tsconfig.commonjs.json && node node_modules/typescript/bin/tsc -p test/types/tsconfig.modern.json",
+    "test:runtime": "node scripts/check-runtime.mjs",
+    "test": "npm run test:upstream && npm run test:characterization && npm run test:differential && npm run test:security && npm run test:stress && npm run test:build-reproducibility && npm run test:browser && npm run test:esm && npm run test:types && npm run test:runtime",
+    "test:coverage:cases": "node --test test/upstream.test.cjs test/characterization.test.cjs test/error-formatting.test.cjs test/malformed-security.test.cjs test/sectioned-map.test.cjs test/stress.test.cjs",
+    "test:coverage": "c8 --all --include=source-map-support.js --check-coverage --lines 85 --functions 85 --branches 75 npm run test:coverage:cases",
+    "test:smoke": "node scripts/smoke-install.mjs",
+    "check:package": "publint && attw --pack .",
+    "check:licenses": "node scripts/check-licenses.mjs",
+    "check:sbom": "node scripts/check-sbom-model.mjs",
+    "check:release": "node scripts/check-release-metadata.mjs",
+    "pack:check": "npm pack --dry-run",
+    "artifact:prepare": "node scripts/create-artifact.mjs",
+    "audit:dependencies": "npm audit --omit=dev --audit-level=low",
+    "audit:all": "npm audit --audit-level=low",
+    "audit:signatures": "npm audit signatures",
+    "docs:build": "npm run build && node scripts/build-docs.mjs",
+    "docs:check": "node scripts/check-docs.mjs",
+    "docs:serve": "node scripts/serve-docs.mjs",
+    "test:docs": "npm run docs:build && npm run docs:check",
+    "verify": "npm run clean && npm run lint && npm run build && npm test && npm run test:coverage && npm run test:smoke && npm run check:package && npm run check:release && npm run pack:check && npm run check:licenses && npm run check:sbom && npm run test:docs && npm run audit:dependencies && npm run audit:all && npm run audit:signatures",
+    "prepack": "npm run build"
+  },
+  "engines": {
+    "node": ">=14.15.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandroit/stackline-source-map-support.git"
+  },
+  "homepage": "https://alexandro.net/docs/vanilla/source-map-support/",
+  "bugs": {
+    "url": "https://github.com/alexandroit/stackline-source-map-support/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "source-map",
+    "stack-trace",
+    "vm",
+    "browser",
+    "typescript",
+    "stackline"
+  ],
+  "author": "Stackline Maintainers",
+  "contributors": [
+    "Evan Wallace"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@jridgewell/trace-mapping": "0.3.31"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "0.18.5",
+    "@eslint/js": "10.0.1",
+    "@jridgewell/gen-mapping": "0.3.13",
+    "acorn": "8.15.0",
+    "c8": "12.0.0",
+    "esbuild": "0.28.2",
+    "eslint": "10.9.1",
+    "path-browserify": "1.0.1",
+    "publint": "0.3.24",
+    "source-map-support-upstream": "npm:source-map-support@0.5.21",
+    "typescript": "7.0.2",
+    "typescript-3-9": "npm:typescript@3.9.10"
+  }
+}

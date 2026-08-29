@@ -1,0 +1,8 @@
+node_modules/
+coverage/
+release-candidate/
+site-dist/
+browser-source-map-support.js
+browser-source-map-support.mjs
+*.tgz
+.generated*

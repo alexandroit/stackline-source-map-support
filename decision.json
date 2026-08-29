@@ -1,0 +1,72 @@
+{
+  "schema": "stackline-package-decision-v1",
+  "observedAt": "2026-08-29T01:14:30Z",
+  "package": "source-map-support",
+  "upstreamVersion": "0.5.21",
+  "target": "@stackline/source-map-support",
+  "targetVersion": "1.0.0",
+  "selectedQueueRank": 1,
+  "startingState": "WATCH",
+  "decision": "GO",
+  "transition": "WATCH -> RESEARCHING -> BUILDING",
+  "reasonCode": "VERIFIED_VM_BROWSER_AND_CUSTOM_HOOK_GAP_WITH_QUALIFIED_ADOPTION_PATH",
+  "problem": "Native Node source maps supersede ordinary use but still fail verified VM behavior, while active Electron/browser/custom-hook consumers retain the historical contract and upstream has no maintained release for current correctness, retention and provenance reports.",
+  "activeUsers": [
+    "Eugeny/tabby",
+    "desktop/desktop"
+  ],
+  "successorLandscape": {
+    "nativeNode": "Preferred for ordinary modern Node execution, but Node 26.8.1 did not map the verified vm.runInThisContext case.",
+    "closestDropIn": "@cspotcode/source-map-support@0.8.1 is also release- and source-stale since 2022.",
+    "decision": "A narrowly documented maintained compatibility continuation has distinct value."
+  },
+  "compatibilityContract": [
+    "CommonJS root and deep register entries",
+    "browser global and AMD bundle",
+    "VM and generated-code mapping",
+    "custom retrieveFile and retrieveSourceMap hooks",
+    "hookRequire, handleUncaughtExceptions and environment options",
+    "inline/external maps, sourcesContent, sourceRoot, URL and Windows paths",
+    "Error.prepareStackTrace and CallSite formatting",
+    "ESM-host and first-party TypeScript additions without CJS breakage"
+  ],
+  "risk": "Global Error and module-loader hooks, memory retention, browser bundling and copied V8 code create medium-high correctness, lifecycle and provenance risk.",
+  "maintenanceCost": "MEDIUM_HIGH_BOUNDED",
+  "adoptionTargets": {
+    "pullRequest": "Eugeny/tabby",
+    "issue": "desktop/desktop",
+    "differentRepositories": true,
+    "liveDeduplicationAtDecision": "PASS"
+  },
+  "proofOfSuccess": [
+    "Native-versus-package VM differential remains green",
+    "Upstream and issue regression suites pass",
+    "Browser, AMD, Node, CJS, ESM-host and TypeScript contracts pass",
+    "Exact packed artifact passes clean direct and legacy-alias consumers",
+    "CI and CodeQL pass on the exact untagged release candidate",
+    "Exact bytes verify on Verdaccio, official npm, GitHub release and Alexandro.Net",
+    "Qualified Tabby PR and different-repository GitHub Desktop issue are recorded"
+  ],
+  "downloads": {
+    "count": 118109775,
+    "start": "2026-08-22",
+    "end": "2026-08-28",
+    "observedAt": "2026-08-29T01:14:30Z",
+    "source": "https://api.npmjs.org/downloads/point/2026-08-22:2026-08-28/source-map-support",
+    "caveat": "Download events include transitive and development installs and are not unique direct users."
+  },
+  "upstreamTarball": {
+    "url": "https://registry.npmjs.org/source-map-support/-/source-map-support-0.5.21.tgz",
+    "sha1": "04fe7c7f9e1ed2d662233c28cb2b35b9f63f6e4f",
+    "sha256": "5d9b04ef3e6824fdcf91cfcc03ab427fae486bc6859735805593f51b3554f636"
+  },
+  "legalGate": {
+    "status": "PASS_CONDITIONAL",
+    "requirements": [
+      "Preserve Evan Wallace MIT license and attribution",
+      "Restore applicable V8 copyright and BSD-3-Clause notice for copied CallSiteToString code"
+    ]
+  },
+  "userPinResolution": "NOT_PINNED",
+  "implementationStartedAtDecisionWrite": false
+}

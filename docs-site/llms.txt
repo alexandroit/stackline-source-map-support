@@ -1,0 +1,6 @@
+# @stackline/source-map-support
+
+Compatibility-first source-map stack traces for VM-generated code, browser
+UMD/AMD, Electron, runtime transpilers, and custom synchronous retrieval.
+Ordinary modern Node.js applications should prefer native source-map support.
+Browser syntax floor: ES2015. License: Evan Wallace MIT plus copied-V8 BSD-3.

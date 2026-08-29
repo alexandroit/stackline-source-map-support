@@ -1,0 +1,11 @@
+:root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; background: #101418; color: #edf2f7; }
+body { margin: 0; }
+main { max-width: 52rem; margin: 0 auto; padding: 5rem 1.5rem; }
+h1 { font-size: clamp(2rem, 7vw, 4.5rem); letter-spacing: -.04em; margin: .2rem 0 1rem; }
+h2 { margin-top: 2.5rem; }
+.eyebrow { color: #7dd3fc; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; }
+.lead { font-size: 1.3rem; line-height: 1.55; }
+pre { overflow: auto; padding: 1rem; background: #1e293b; border-radius: .6rem; }
+nav { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; }
+a { color: #7dd3fc; }
+.disclaimer { margin-top: 3rem; color: #94a3b8; font-size: .9rem; }
