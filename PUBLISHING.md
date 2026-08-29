@@ -1,11 +1,11 @@
 # Publishing
 
-`@stackline/source-map-support@1.0.0` is not yet published. The public source
-repository and its untagged release-candidate commit are required for the
-remote gate. Do not create a tag, registry release, deployment, or downstream
-contact until the ordered gates below pass.
+`@stackline/source-map-support@1.0.0` is published and immutable. Use the
+official npm bytes and the `stackline-v1.0.0` GitHub release at source commit
+`110450f9bac02054a152cfd9fb463283e3ce8765`. Never rebuild, replace, or
+republish version 1.0.0.
 
-## Release gate
+## Frozen 1.0.0 release gate
 
 The initial release must come from an immutable commit that is green in CI and
 CodeQL. From a clean checkout of that exact commit, run:
@@ -37,10 +37,11 @@ Review the one-shot output before any publication:
 - install the exact tarball in the qualified downstream smoke lanes; and
 - obtain the required human release approval.
 
-Publish the already-reviewed tarball bytes once. Record official registry and
-repository URLs, tag/commit, timestamps, and downloaded-registry hash matches
-only after those events actually occur. Publish to the established Verdaccio
-registry first and verify a downloaded direct install and historical-key npm
-alias. Then publish the same tarball exactly once to official npm and repeat
-the byte and consumer checks. Never republish `1.0.0`; if propagation or a
-post-publication surface fails, resume from the immutable registry bytes.
+This procedure produced the accepted 39,023-byte artifact with SHA-256
+`d7ff4d6e01f067e595e3df603a2aa88486d783c7c11d45e4df073ed577f94adb`.
+Verdaccio and official npm downloads matched it exactly, and clean direct and
+historical-key alias consumers passed. Official npm created the version at
+2026-08-29T02:12:43.455Z. The immutable GitHub release was published at
+2026-08-29T02:17:33Z. Alexandro.Net catalog and package documentation were
+deployed and verified before adoption contact. Future publication work starts
+with a new version and must never mutate this release or its tag.
