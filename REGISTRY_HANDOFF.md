@@ -46,9 +46,9 @@ republish, move or recreate version 1.0.0 or its tag.
 - Pull-request validation: clean Node 22/Yarn 1 frozen installs, exact alias
   identity, typings, literal lint, full build, Electron 38 mapped-error smoke
   and `git diff --check` PASS.
-- Pull-request remote state: CodeQL, lint and one macOS job PASS; six platform
-  builds in run `33229205500` remained in progress with no failure at the
-  2026-08-29T02:42:16Z read.
+- Pull-request remote state: CodeQL, lint and all seven macOS, Windows and Linux
+  jobs in run `33229205500` PASS; PR merge state `CLEAN` at
+  2026-08-29T02:53:18Z.
 - Different-repository issue:
   <https://github.com/desktop/desktop/issues/22782>, evidence base
   `b17e06dd0f0d9a45807eb39a51d223f52eb14da9`; exact declaration, lockfile,

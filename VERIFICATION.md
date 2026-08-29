@@ -112,9 +112,9 @@ concurrent edge requests all returned 200; `TcpExtListenDrops` remained 692 and
 - Changed-tree verification: clean Node 22/Yarn 1 frozen installs, installed
   alias identity, typings, literal lint, full build, Electron 38 mapped-error
   smoke and `git diff --check` passed.
-- Tabby CodeQL run `33229205502`, the Package-Build lint job and one macOS job
-  passed. Six macOS, Windows and Linux build jobs in run `33229205500` were in
-  progress with no failures at the 2026-08-29T02:42:16Z observation.
+- Tabby CodeQL run `33229205502`, the Package-Build lint job and all seven
+  macOS, Windows and Linux build jobs in run `33229205500` passed. The PR was
+  open, mergeable and `CLEAN` at the 2026-08-29T02:53:18Z observation.
 - Issue: <https://github.com/desktop/desktop/issues/22782>, evidence base
   `b17e06dd0f0d9a45807eb39a51d223f52eb14da9`, no repository mutation.
 - Desktop's triage bot found no duplicate and added one automated comment; the

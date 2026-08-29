@@ -22,9 +22,9 @@ CommonJS external in `app/webpack.config.main.mjs` remain unchanged. Clean Node
 Generated Yarn output also normalized existing `string-width`, `strip-ansi`
 and `wrap-ansi` selector groups; that limitation is disclosed in the PR.
 
-The PR is open, non-draft and mergeable. CodeQL, remote lint and one macOS job
-passed; six macOS, Windows and Linux package-build jobs were still in progress
-with no failure at the 2026-08-29T02:42:16Z observation. The PR discloses independent Stackline
+The PR is open, non-draft, mergeable and `CLEAN`. CodeQL, remote lint and all
+seven macOS, Windows and Linux package-build jobs passed by the
+2026-08-29T02:53:18Z observation. The PR discloses independent Stackline
 maintainership, lack of affiliation/endorsement, the Node floor, the absence of
 a security claim and exactly the `AI-designed, AI-coded, manually checked`
 repository category. Do not add a promotional comment or unsolicited follow-up.

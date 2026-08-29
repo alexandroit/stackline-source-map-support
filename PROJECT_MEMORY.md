@@ -72,9 +72,9 @@ key through the exact npm alias. Its base is
 typings, literal lint, full build, Electron 38 mapped-error smoke and
 `git diff --check` passed. The PR discloses independent Stackline
 maintainership, the Node floor, lockfile normalization and AI involvement; it
-makes no vulnerability claim. Remote CodeQL, lint and one macOS build passed;
-six cross-platform package-build jobs were still in progress with no failure at
-the 2026-08-29T02:42:16Z observation.
+makes no vulnerability claim. Remote CodeQL, lint and all seven macOS, Windows
+and Linux package-build jobs passed; the PR was open, mergeable and `CLEAN` at
+the 2026-08-29T02:53:18Z observation.
 
 The different-repository issue
 <https://github.com/desktop/desktop/issues/22782> records Desktop commit
