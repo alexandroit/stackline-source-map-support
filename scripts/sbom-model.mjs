@@ -11,6 +11,8 @@ export const bundledBrowserMaterial = [
   ['path-browserify', '1.0.1']
 ]
 
+const npmPurl = (name, version) => `pkg:npm/${name.split('/').map(encodeURIComponent).join('/')}@${encodeURIComponent(version)}`
+
 const componentRef = (name, version) => `${name}@${version}`
 const componentPath = (name) => `node_modules/${name}`
 
@@ -29,7 +31,7 @@ export function createSbom ({ lock, manifest, sourceCommit, timestamp }) {
       name,
       version,
       licenses: [{ license: { id: 'MIT' } }],
-      purl: `pkg:npm/${name.replace('@', '%40')}@${version}`,
+      purl: npmPurl(name, version),
       externalReferences: metadata.resolved
         ? [{ type: 'distribution', url: metadata.resolved }]
         : undefined,
@@ -60,7 +62,7 @@ export function createSbom ({ lock, manifest, sourceCommit, timestamp }) {
         name: manifest.name,
         version: manifest.version,
         licenses: [{ license: { id: 'MIT' } }],
-        purl: 'pkg:npm/%40stackline/source-map-support@1.0.0',
+        purl: npmPurl(manifest.name, manifest.version),
         externalReferences: [{ type: 'vcs', url: `${repository}#${sourceCommit}` }],
         properties: [
           { name: 'stackline:source-commit', value: sourceCommit },

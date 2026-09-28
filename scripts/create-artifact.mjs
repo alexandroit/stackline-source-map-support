@@ -25,7 +25,7 @@ function git (args) {
 }
 
 const npmVersion = run('npm', ['--version'])
-assert.equal(npmVersion, '10.8.2', 'artifact preparation requires the exact npm version used by CI')
+assert.equal(npmVersion, '11.19.0', 'artifact preparation requires the exact npm version used by CI')
 
 const sourceCommit = git(['rev-parse', '--verify', 'HEAD'])
 assert.match(sourceCommit, /^[0-9a-f]{40}$/, 'artifact preparation requires a full Git HEAD')
@@ -74,7 +74,7 @@ await writeFile(path.join(output, 'release-manifest.json'), `${JSON.stringify({
   version: pack.version
 }, null, 2)}\n`)
 await writeFile(path.join(output, 'RELEASE_NOTES.md'), [
-  '# @stackline/source-map-support 1.0.0 release candidate',
+  `# ${manifest.name} ${manifest.version} release candidate`,
   '',
   'Compatibility continuation of source-map-support 0.5.21 for VM, browser,',
   'Electron, and custom retrieval-hook consumers. Ordinary modern Node.js',

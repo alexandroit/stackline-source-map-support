@@ -404,7 +404,7 @@ function CallSiteToString() {
         line += typeName + ".";
       }
       line += functionName;
-      if (methodName && functionName.indexOf("." + methodName) != functionName.length - methodName.length - 1) {
+      if (methodName && functionName !== methodName && functionName.slice(-(methodName.length + 1)) !== "." + methodName) {
         line += " [as " + methodName + "]";
       }
     } else {
@@ -518,9 +518,41 @@ function prepareStackTrace(error, stack) {
   return errorString + processedStack.reverse().join('');
 }
 
+// Scan one frame at a time and read its numeric suffix backwards. Repeated
+// " (" fragments in a malformed stack must not trigger regexp backtracking.
+function errorSourcePosition(stack) {
+  stack = '' + stack;
+  var marker = '\n    at ';
+  var offset = 0;
+  while ((offset = stack.indexOf(marker, offset)) !== -1) {
+    var start = offset + marker.length;
+    var end = stack.indexOf('\n', start);
+    if (end === -1) end = stack.length;
+    offset = end;
+    var frame = stack.slice(start, end);
+    if (/[\r\u2028\u2029]/.test(frame)) continue;
+    var cursor = frame.length;
+    if (frame.charAt(cursor - 1) === ')') cursor--;
+    var columnEnd = cursor;
+    while (cursor > 0 && frame.charAt(cursor - 1) >= '0' && frame.charAt(cursor - 1) <= '9') cursor--;
+    if (cursor === columnEnd || frame.charAt(cursor - 1) !== ':') continue;
+    var column = frame.slice(cursor, columnEnd);
+    var lineEnd = --cursor;
+    while (cursor > 0 && frame.charAt(cursor - 1) >= '0' && frame.charAt(cursor - 1) <= '9') cursor--;
+    if (cursor === lineEnd || frame.charAt(cursor - 1) !== ':') continue;
+    var line = frame.slice(cursor, lineEnd);
+    var sourceEnd = cursor - 1;
+    if (sourceEnd === 0) continue;
+    var prefix = frame.lastIndexOf(' (', sourceEnd - 3);
+    var sourceStart = prefix > 0 ? prefix + 2 : 0;
+    return [null, frame.slice(sourceStart, sourceEnd), line, column];
+  }
+  return null;
+}
+
 // Generate position and snippet of original source with pointer
 function getErrorSource(error) {
-  var match = /\n    at (?:.+ \()?(.+):(\d+):(\d+)\)?(?:\n|$)/.exec(error.stack);
+  var match = errorSourcePosition(error.stack);
   if (match) {
     var source = match[1];
     var line = +match[2];

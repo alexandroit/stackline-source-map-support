@@ -2,6 +2,10 @@
 
 ## [1.0.1] - 2026-09-28
 
+- Parse error-stack locations in linear time to bound malformed-frame processing.
+- Correct method aliases for equal-length distinct names and repeated qualified suffixes.
+- Generate encoded SBOM package URLs and release notes from the current package version.
+
 - Organize package documentation, preserve API and migration examples, and add Stackline community links.
 - Improve package discovery keywords with precise domain terms and `stackline`.
 - Pin GitHub Actions release tooling and require an explicit missing-version response before publication.

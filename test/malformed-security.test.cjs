@@ -4,7 +4,7 @@ const assert = require('node:assert/strict')
 const fs = require('node:fs')
 const path = require('node:path')
 const test = require('node:test')
-const { temporaryDirectory } = require('./helpers.cjs')
+const { temporaryDirectory, runNode } = require('./helpers.cjs')
 
 test('malformed map JSON falls back to the generated position and is cached', () => {
   const api = require('../source-map-support')
@@ -98,4 +98,13 @@ test('long non-matching sourceMappingURL input remains bounded', () => {
   } finally {
     fs.rmSync(directory, { force: true, recursive: true })
   }
+})
+
+test('malformed stack frame parsing is bounded for repeated openings and digit suffixes', () => {
+  const child = runNode(['-e', [
+    `const api = require(${JSON.stringify(path.resolve(__dirname, '../source-map-support.js'))})`,
+    "for (const frame of ['a ('.repeat(80000) + 'missing:1', 'path:' + '1'.repeat(240000) + ':x']) { if (api.getErrorSource({ stack: 'Error: hostile\\n    at ' + frame }) !== null) process.exit(2) }"
+  ].join(';')], { timeout: 5000 })
+  assert.equal(child.error, undefined, String(child.error))
+  assert.equal(child.status, 0, child.stderr)
 })
