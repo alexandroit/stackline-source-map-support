@@ -6,7 +6,7 @@ Applications that already import `source-map-support` can change only their
 dependency value:
 
 ```json
-"source-map-support": "npm:@stackline/source-map-support@1.0.0"
+"source-map-support": "npm:@stackline/source-map-support@1.0.1"
 ```
 
 Regenerate the lockfile with the repository's own package-manager version and
