@@ -6,3 +6,4 @@ browser-source-map-support.js
 browser-source-map-support.mjs
 *.tgz
 .generated*
+artifact/

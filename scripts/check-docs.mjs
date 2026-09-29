@@ -43,7 +43,7 @@ assert.deepEqual(metadata, {
   browserSyntax: 'ES2015',
   name: '@stackline/source-map-support',
   nativeNodeRecommendation: true,
-  version: '1.0.1'
+  version: '1.0.2'
 })
 
 console.log('Static docs inventory, metadata, native boundary, and crawl files passed.')

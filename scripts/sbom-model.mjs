@@ -1,14 +1,14 @@
 import assert from 'node:assert/strict'
 
 export const installedProduction = [
-  ['@jridgewell/trace-mapping', '0.3.31'],
+  ['@stackline/trace-mapping', '1.0.0', '@jridgewell/trace-mapping'],
   ['@jridgewell/resolve-uri', '3.1.2'],
   ['@jridgewell/sourcemap-codec', '1.6.0']
 ]
 
 export const bundledBrowserMaterial = [
   ...installedProduction,
-  ['path-browserify', '1.0.1']
+  ['@stackline/path-browserify', '1.0.0', 'path-browserify']
 ]
 
 const npmPurl = (name, version) => `pkg:npm/${name.split('/').map(encodeURIComponent).join('/')}@${encodeURIComponent(version)}`
@@ -21,8 +21,9 @@ export function createSbom ({ lock, manifest, sourceCommit, timestamp }) {
   assert.equal(new Date(timestamp).toISOString(), timestamp)
 
   const installedRefs = new Set(installedProduction.map(([name, version]) => componentRef(name, version)))
-  const components = bundledBrowserMaterial.map(([name, version]) => {
-    const metadata = lock.packages[componentPath(name)]
+  const components = bundledBrowserMaterial.map(([name, version, installedName = name]) => {
+    const metadata = lock.packages[componentPath(installedName)]
+    assert.equal(metadata.name || installedName, name, `${name} lock identity drifted`)
     assert.equal(metadata.version, version, `${name} lock version drifted`)
     assert.equal(metadata.license, 'MIT', `${name} lock license drifted`)
     return {
@@ -44,10 +45,10 @@ export function createSbom ({ lock, manifest, sourceCommit, timestamp }) {
   })
 
   const rootRef = componentRef(manifest.name, manifest.version)
-  const traceRef = componentRef('@jridgewell/trace-mapping', '0.3.31')
+  const traceRef = componentRef('@stackline/trace-mapping', '1.0.0')
   const resolveRef = componentRef('@jridgewell/resolve-uri', '3.1.2')
   const codecRef = componentRef('@jridgewell/sourcemap-codec', '1.6.0')
-  const pathBrowserifyRef = componentRef('path-browserify', '1.0.1')
+  const pathBrowserifyRef = componentRef('@stackline/path-browserify', '1.0.0')
   const repository = manifest.repository.url.replace(/^git\+/, '')
   const sbom = {
     bomFormat: 'CycloneDX',

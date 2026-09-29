@@ -11,7 +11,7 @@
 **[Issues](https://github.com/alexandroit/stackline-source-map-support/issues)** |
 **[Repository](https://github.com/alexandroit/stackline-source-map-support)**
 
-**Package version:** `1.0.1`
+**Package version:** `1.0.2`
 
 ## Why this package?
 
@@ -28,7 +28,7 @@ contracts, not to replace the native path.
 
 | Item | Value |
 | --- | --- |
-| Package | `@stackline/source-map-support@1.0.1` |
+| Package | `@stackline/source-map-support@1.0.2` |
 | Node.js runtime | `>=14.15.1` |
 | CommonJS / primary entry | `./source-map-support.js` |
 | ES module entry | `./index.mjs` |
@@ -41,7 +41,7 @@ contracts, not to replace the native path.
 ### Install
 
 ```sh
-npm install @stackline/source-map-support@1.0.1
+npm install @stackline/source-map-support@1.0.2
 ```
 
 Historical package-key migration can be source-free with an npm alias:
@@ -49,7 +49,7 @@ Historical package-key migration can be source-free with an npm alias:
 ```json
 {
   "dependencies": {
-    "source-map-support": "npm:@stackline/source-map-support@1.0.1"
+    "source-map-support": "npm:@stackline/source-map-support@1.0.2"
   }
 }
 ```

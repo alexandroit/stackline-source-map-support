@@ -126,12 +126,12 @@ try {
 
   const installed = path.join(temporary, 'node_modules', '@stackline', 'source-map-support')
   const installedManifest = JSON.parse(await readFile(path.join(installed, 'package.json'), 'utf8'))
-  assert.deepEqual(installedManifest.dependencies, { '@jridgewell/trace-mapping': '0.3.31' })
+  assert.deepEqual(installedManifest.dependencies, { '@jridgewell/trace-mapping': 'npm:@stackline/trace-mapping@1.0.0' })
   assert.deepEqual(installedManifest.browser, {
     './source-map-support.js': './browser-source-map-support.js'
   })
   for (const [name, version] of [
-    ['@jridgewell/trace-mapping', '0.3.31'],
+    ['@jridgewell/trace-mapping', '1.0.0'],
     ['@jridgewell/resolve-uri', '3.1.2'],
     ['@jridgewell/sourcemap-codec', '1.6.0']
   ]) {

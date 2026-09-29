@@ -2,11 +2,11 @@
 
 The installed production graph has one exact direct runtime dependency:
 
-- `@jridgewell/trace-mapping@0.3.31` — MIT; transitively uses
+- `@stackline/trace-mapping@1.0.0` (installed as `@jridgewell/trace-mapping`, based on upstream0.3.31) — MIT; transitively uses
   `@jridgewell/resolve-uri` and `@jridgewell/sourcemap-codec`, both MIT.
 
 The self-contained browser JavaScript and ESM artifacts bundle the same three
-installed production packages plus `path-browserify@1.0.1` (MIT, Copyright
+installed production packages plus `@stackline/path-browserify@1.0.0` (installed as `path-browserify`, based on upstream1.0.1) (MIT, Copyright
 (c) 2013 James Halliday). `path-browserify` is bundled material only; it is a
 development-time build input and is not installed in the production graph.
 Exact upstream license bytes are copied to:

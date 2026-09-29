@@ -23,7 +23,7 @@ for (const file of [
 }
 
 assert.deepEqual(manifest.dependencies, {
-  '@jridgewell/trace-mapping': '0.3.31'
+  '@jridgewell/trace-mapping': 'npm:@stackline/trace-mapping@1.0.0'
 })
 assert.equal(Object.keys(manifest.optionalDependencies || {}).length, 0)
 assert.equal(Object.keys(manifest.peerDependencies || {}).length, 0)

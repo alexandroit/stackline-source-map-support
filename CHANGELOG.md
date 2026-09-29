@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.2 - 2026-09-29
+
+- Replace `@jridgewell/trace-mapping` with exact alias `npm:@stackline/trace-mapping@1.0.0`, preserving existing import names.
+- Replace `path-browserify` with exact alias `npm:@stackline/path-browserify@1.0.0`, preserving existing import names.
+- Preserve the public API and existing runtime/compiler compatibility.
+
 ## [1.0.1] - 2026-09-28
 
 - Parse error-stack locations in linear time to bound malformed-frame processing.
