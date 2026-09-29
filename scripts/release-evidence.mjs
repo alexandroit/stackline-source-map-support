@@ -3,6 +3,7 @@ import {createHash} from 'node:crypto'
 import {execFileSync} from 'node:child_process'
 import {readFile, writeFile, readdir} from 'node:fs/promises'
 import path from 'node:path'
+import {createSbom} from './sbom-model.mjs'
 
 const directory = path.resolve(process.argv[2])
 const archives = (await readdir(directory)).filter(name => name.endsWith('.tgz'))
@@ -15,6 +16,10 @@ assert.equal(evidence.package, `${metadata.name}@${metadata.version}`)
 assert.match(evidence.sourceCommit, /^[0-9a-f]{40}$/)
 await writeFile(path.join(directory, 'package.json'), JSON.stringify(metadata, null, 2) + '\n')
 await writeFile(path.join(directory, 'sbom.cdx.json'), JSON.stringify(evidence.consumers.find(item => item.kind === 'direct').sbom, null, 2) + '\n')
+// Preserve both the installed consumer graph and the browser's bundled material graph.
+const lock = JSON.parse(await readFile('package-lock.json', 'utf8'))
+const bundled = createSbom({lock, manifest: metadata, sourceCommit: evidence.sourceCommit, timestamp: evidence.observedAt})
+await writeFile(path.join(directory, 'bundled-sbom.cdx.json'), JSON.stringify(bundled, null, 2) + '\n')
 const notes = [
   `# ${evidence.package}`, '',
   'Independent Stackline maintenance fork. Original authors and licenses are retained.', '',

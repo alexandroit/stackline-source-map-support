@@ -7,7 +7,7 @@ republish version 1.0.0.
 
 ## Current maintenance release workflow
 
-For new versions, use Node 24.20.0 and npm 11.19.0. Wait for the complete CI and CodeQL runs at the exact default-branch commit, download its `npm-package` artifact, review the package contents and SHA-512, then dispatch `publish.yml` with `ci_run_id` and `expected_sha512`. The workflow retains the full verification suite, downloads the reviewed CI archive, rejects an existing version, and publishes that exact archive with npm provenance. The existing repository token is available only to the publish step. Registry byte/signature/provenance checks and an immutable GitHub release complete the workflow.
+For new versions, use Node 24.20.0 and npm 11.19.0. Wait for the complete CI and CodeQL runs at the exact default-branch commit, download its `npm-package` artifact, review the package contents and SHA-512, then dispatch `publish.yml` with `ci_run_id` and `expected_sha512`. The workflow retains the full verification suite, downloads the reviewed CI archive, rejects an existing version, and publishes that exact archive with npm provenance. The existing repository token is available only to the publish step. Registry byte/signature/provenance checks and an immutable GitHub release complete the workflow. Release assets include the installed-consumer SBOM and a separate bundled-material SBOM that also records path-browserify in the browser artifacts.
 
 The initial 1.0.0 record below is historical and remains unchanged.
 
