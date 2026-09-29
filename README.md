@@ -4,13 +4,13 @@
 
 [![npm version](https://img.shields.io/npm/v/@stackline/source-map-support.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/source-map-support)
 [![license](https://img.shields.io/npm/l/@stackline/source-map-support.svg?style=flat-square)](https://github.com/alexandroit/stackline-source-map-support)
-[![GitHub repository](https://img.shields.io/badge/GitHub-alexandroit%2Fstackline-source-map-support-181717?style=flat-square&logo=github)](https://github.com/alexandroit/stackline-source-map-support)
+[![GitHub repository](https://img.shields.io/badge/GitHub-repository-181717?style=flat-square&logo=github)](https://github.com/alexandroit/stackline-source-map-support)
 [![Docs](https://img.shields.io/badge/docs-alexandro.net-0f766e?style=flat-square)](https://alexandro.net/docs/vanilla/source-map-support/)
 [![Reddit community](https://img.shields.io/badge/community-r%2FStackline-ff4500?style=flat-square&logo=reddit&logoColor=white)](https://www.reddit.com/r/Stackline/)
 
 **[Documentation](https://alexandro.net/docs/vanilla/source-map-support/)** | **[npm](https://www.npmjs.com/package/@stackline/source-map-support)** | **[Issues](https://github.com/alexandroit/stackline-source-map-support/issues)** | **[Repository](https://github.com/alexandroit/stackline-source-map-support)**
 
-**Current package version:** `1.0.3`
+**Current package version:** `1.0.4`
 
 ---
 
@@ -29,7 +29,7 @@ contracts, not to replace the native path.
 
 | Item | Value |
 | --- | --- |
-| Package | `@stackline/source-map-support@1.0.3` |
+| Package | `@stackline/source-map-support@1.0.4` |
 | Node.js runtime | `>=14.15.1` |
 | CommonJS / primary entry | `./source-map-support.js` |
 | ES module entry | `./index.mjs` |
@@ -42,7 +42,7 @@ contracts, not to replace the native path.
 ### Install
 
 ```sh
-npm install @stackline/source-map-support@1.0.3
+npm install @stackline/source-map-support@1.0.4
 ```
 
 Historical package-key migration can be source-free with an npm alias:
@@ -50,7 +50,7 @@ Historical package-key migration can be source-free with an npm alias:
 ```json
 {
   "dependencies": {
-    "source-map-support": "npm:@stackline/source-map-support@1.0.3"
+    "source-map-support": "npm:@stackline/source-map-support@1.0.4"
   }
 }
 ```
