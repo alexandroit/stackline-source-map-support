@@ -4,7 +4,7 @@
     {
       "name": "@stackline/source-map-support",
       "path": "README.md",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "baselineVersion": "1.0.2",
       "keywords": [
         "stackline",
@@ -21,8 +21,8 @@
       "homepage": "https://alexandro.net/docs/vanilla/source-map-support/",
       "baselineTarball": "https://registry.npmjs.org/@stackline/source-map-support/-/source-map-support-1.0.2.tgz",
       "baselineIntegrity": "sha512-1js2u9tA8D9cCewdJusW25wEeNBxq1w2Mt/MHfNJf43KAgGf2pZrhSsgNdbmpsTbBk8vUyHdQ6hdLRU0TfySog==",
-      "expectedSha512": "409d6d0df387f5f314d76d4dd7f431bac515e84bb23315bd2111cd643fca974169b28cc8c886a9c5d0d27413d248180e97db2d07b321eb9dba59859eddfc3196",
-      "tag": "docs-stackline-source-map-support-v1.0.3"
+      "expectedSha512": "eddccb0514b5bec6be25e2ae5727447108cb36b681bedd0ed2865161ad708aebb3b1161f998d9f74e3e00395c9e2d2331e7fa7a67610d685d0c3487f1e8efc1b",
+      "tag": "docs-stackline-source-map-support-v1.0.4"
     }
   ]
 }
