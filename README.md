@@ -1,17 +1,18 @@
 # @stackline/source-map-support
 
-> Compatibility-first source-map stack traces for VM, browser, and custom loader integrations
+> Compatibility-first source-map stack traces for VM, browser, and custom loader integrations.
 
 [![npm version](https://img.shields.io/npm/v/@stackline/source-map-support.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/source-map-support)
-[![license](https://img.shields.io/npm/l/@stackline/source-map-support.svg?style=flat-square)](https://github.com/alexandroit/stackline-source-map-support/blob/main/LICENSE)
-[![GitHub repository](https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github)](https://github.com/alexandroit/stackline-source-map-support)
+[![license](https://img.shields.io/npm/l/@stackline/source-map-support.svg?style=flat-square)](https://github.com/alexandroit/stackline-source-map-support)
+[![GitHub repository](https://img.shields.io/badge/GitHub-alexandroit%2Fstackline-source-map-support-181717?style=flat-square&logo=github)](https://github.com/alexandroit/stackline-source-map-support)
+[![Docs](https://img.shields.io/badge/docs-alexandro.net-0f766e?style=flat-square)](https://alexandro.net/docs/vanilla/source-map-support/)
+[![Reddit community](https://img.shields.io/badge/community-r%2FStackline-ff4500?style=flat-square&logo=reddit&logoColor=white)](https://www.reddit.com/r/Stackline/)
 
-**[Documentation](https://alexandro.net/docs/vanilla/source-map-support/)** |
-**[npm](https://www.npmjs.com/package/@stackline/source-map-support)** |
-**[Issues](https://github.com/alexandroit/stackline-source-map-support/issues)** |
-**[Repository](https://github.com/alexandroit/stackline-source-map-support)**
+**[Documentation](https://alexandro.net/docs/vanilla/source-map-support/)** | **[npm](https://www.npmjs.com/package/@stackline/source-map-support)** | **[Issues](https://github.com/alexandroit/stackline-source-map-support/issues)** | **[Repository](https://github.com/alexandroit/stackline-source-map-support)**
 
-**Package version:** `1.0.2`
+**Current package version:** `1.0.3`
+
+---
 
 ## Why this package?
 
@@ -28,7 +29,7 @@ contracts, not to replace the native path.
 
 | Item | Value |
 | --- | --- |
-| Package | `@stackline/source-map-support@1.0.2` |
+| Package | `@stackline/source-map-support@1.0.3` |
 | Node.js runtime | `>=14.15.1` |
 | CommonJS / primary entry | `./source-map-support.js` |
 | ES module entry | `./index.mjs` |
@@ -41,7 +42,7 @@ contracts, not to replace the native path.
 ### Install
 
 ```sh
-npm install @stackline/source-map-support@1.0.2
+npm install @stackline/source-map-support@1.0.3
 ```
 
 Historical package-key migration can be source-free with an npm alias:
@@ -49,7 +50,7 @@ Historical package-key migration can be source-free with an npm alias:
 ```json
 {
   "dependencies": {
-    "source-map-support": "npm:@stackline/source-map-support@1.0.2"
+    "source-map-support": "npm:@stackline/source-map-support@1.0.3"
   }
 }
 ```
@@ -182,15 +183,6 @@ npm run test:smoke
 
 Run `npm run verify` and inspect the package contents before release. Publish a new version through the [GitHub Actions publishing workflow](https://github.com/alexandroit/stackline-source-map-support/actions/workflows/publish.yml), using the SHA-512 digest of the reviewed tarball. Verify the exact published version, tarball integrity, and npm provenance after the run.
 
-## Community and Support
-
-Report reproducible package issues in the [issue tracker](https://github.com/alexandroit/stackline-source-map-support/issues). Use the [security policy](https://github.com/alexandroit/stackline-source-map-support/blob/main/SECURITY.md) for vulnerability reports.
-
-- [Stackline / Alexandro.Net](https://alexandro.net/)
-- [GitHub](https://github.com/alexandroit)
-- [Maintainer LinkedIn](https://www.linkedin.com/in/aleinfo/)
-- [Reddit community: r/Stackline](https://www.reddit.com/r/Stackline/)
-
 ## License
 
 <a id="provenance-and-license"></a>
@@ -206,3 +198,24 @@ The browser artifacts also ship exact MIT notices for their bundled
 This is an independent Stackline continuation. Stackline is not affiliated
 with, endorsed by, or acting on behalf of Evan Wallace, the upstream npm
 maintainers, Google, or the V8 project.
+
+## Credits and original authors
+
+- Stackline Maintainers.
+- Evan Wallace.
+- Copyright (c) 2014 Evan Wallace.
+- Copyright (c) 2014 Evan Wallace. Licensed under the MIT License reproduced in.
+- Copyright 2012 the V8 project authors. All rights reserved.
+- Stackline maintenance: [Alexandro Paixao Marques](https://www.linkedin.com/in/aleinfo/) and [Stackline contributors](https://github.com/alexandroit).
+
+Original copyright, license notices and contributor acknowledgements remain part of this distribution. Stackline maintenance does not replace authorship of the original work.
+
+## Community and Links
+
+- [Stackline website](https://alexandro.net/)
+- [GitHub projects](https://github.com/alexandroit)
+- [npm packages](https://www.npmjs.com/~alex360qc)
+- [Reddit community — r/Stackline](https://www.reddit.com/r/Stackline/)
+- [Maintainer LinkedIn](https://www.linkedin.com/in/aleinfo/)
+
+Use this repository's issue tracker for reproducible bugs and feature requests. Join r/Stackline for examples, usage questions and release discussions.

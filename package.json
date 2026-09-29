@@ -1,6 +1,6 @@
 {
   "name": "@stackline/source-map-support",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Compatibility-first source-map stack traces for VM, browser, and custom loader integrations",
   "type": "commonjs",
   "main": "./source-map-support.js",
@@ -141,12 +141,15 @@
     "access": "public"
   },
   "keywords": [
+    "stackline",
+    "npm-package",
+    "source-map-support",
+    "browser",
+    "typescript",
+    "nodejs",
     "source-map",
     "stack-trace",
     "vm",
-    "browser",
-    "typescript",
-    "stackline",
     "debugging"
   ],
   "author": "Stackline Maintainers",
