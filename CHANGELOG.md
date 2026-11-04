@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.6 - 2026-11-04
+
+- Correct the current package version and installation examples in the published README.
+- Reject stale README version claims in the packed artifact before npm publication.
+
 ## 1.0.5 - 2026-11-04
 
 - Refresh published Stackline aliases and the development dependency closure.

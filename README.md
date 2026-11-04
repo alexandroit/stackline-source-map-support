@@ -10,7 +10,7 @@
 
 **[Documentation](https://alexandro.net/docs/vanilla/source-map-support/)** | **[npm](https://www.npmjs.com/package/@stackline/source-map-support)** | **[Issues](https://github.com/alexandroit/stackline-source-map-support/issues)** | **[Repository](https://github.com/alexandroit/stackline-source-map-support)**
 
-**Current package version:** `1.0.4`
+**Current package version:** `1.0.6`
 
 ---
 
@@ -29,7 +29,7 @@ contracts, not to replace the native path.
 
 | Item | Value |
 | --- | --- |
-| Package | `@stackline/source-map-support@1.0.4` |
+| Package | `@stackline/source-map-support@1.0.6` |
 | Node.js runtime | `>=14.15.1` |
 | CommonJS / primary entry | `./source-map-support.js` |
 | ES module entry | `./index.mjs` |
@@ -42,7 +42,7 @@ contracts, not to replace the native path.
 ### Install
 
 ```sh
-npm install @stackline/source-map-support@1.0.4
+npm install @stackline/source-map-support@1.0.6
 ```
 
 Historical package-key migration can be source-free with an npm alias:
@@ -50,7 +50,7 @@ Historical package-key migration can be source-free with an npm alias:
 ```json
 {
   "dependencies": {
-    "source-map-support": "npm:@stackline/source-map-support@1.0.4"
+    "source-map-support": "npm:@stackline/source-map-support@1.0.6"
   }
 }
 ```
