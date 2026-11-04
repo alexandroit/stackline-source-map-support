@@ -5,10 +5,10 @@ const root = new URL('../', import.meta.url)
 const manifest = JSON.parse(await readFile(new URL('package.json', root), 'utf8'))
 assert.equal(manifest.license, 'MIT')
 assert.equal(JSON.parse(await readFile(new URL('node_modules/@jridgewell/trace-mapping/package.json', root), 'utf8')).name, '@stackline/trace-mapping')
-assert.deepEqual(manifest.dependencies, { '@jridgewell/trace-mapping': 'npm:@stackline/trace-mapping@1.0.0' })
+assert.deepEqual(manifest.dependencies, { '@jridgewell/trace-mapping': 'npm:@stackline/trace-mapping@1.0.2' })
 
 for (const [name, version] of [
-  ['@jridgewell/trace-mapping', '1.0.0'],
+  ['@jridgewell/trace-mapping', '1.0.2'],
   ['@jridgewell/resolve-uri', '3.1.2'],
   ['@jridgewell/sourcemap-codec', '1.6.0']
 ]) {
@@ -40,7 +40,7 @@ for (const [upstream, copied] of [
   )
 }
 const pathBrowserify = JSON.parse(await readFile(new URL('node_modules/path-browserify/package.json', root), 'utf8'))
-assert.equal(pathBrowserify.version, '1.0.0')
+assert.equal(pathBrowserify.version, '1.0.2')
 assert.equal(pathBrowserify.name, '@stackline/path-browserify')
 assert.equal(pathBrowserify.license, 'MIT')
 const thirdParty = await readFile(new URL('THIRD_PARTY_LICENSES.md', root), 'utf8')

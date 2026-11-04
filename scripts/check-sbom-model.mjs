@@ -22,10 +22,10 @@ console.log('CycloneDX installed three-package graph, four bundled browser mater
 
 assert.equal(sbom.metadata.component.purl, `pkg:npm/%40stackline/source-map-support@${manifest.version}`)
 assert.deepEqual(sbom.components.map(({ purl }) => purl), [
-  'pkg:npm/%40stackline/trace-mapping@1.0.0',
+  'pkg:npm/%40stackline/trace-mapping@1.0.2',
   'pkg:npm/%40jridgewell/resolve-uri@3.1.2',
   'pkg:npm/%40jridgewell/sourcemap-codec@1.6.0',
-  'pkg:npm/%40stackline/path-browserify@1.0.0'
+  'pkg:npm/%40stackline/path-browserify@1.0.2'
 ])
 const escapedRoot = createSbom({
   lock,

@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
 import { access, readFile } from 'node:fs/promises'
 
+const release = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'))
 const output = new URL('../site-dist/', import.meta.url)
 const required = [
   'CHANGELOG.md',
@@ -43,7 +44,7 @@ assert.deepEqual(metadata, {
   browserSyntax: 'ES2015',
   name: '@stackline/source-map-support',
   nativeNodeRecommendation: true,
-  version: '1.0.2'
+  version: release.version
 })
 
 console.log('Static docs inventory, metadata, native boundary, and crawl files passed.')

@@ -1,6 +1,6 @@
 {
   "name": "@stackline/source-map-support",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Compatibility-first source-map stack traces for VM, browser, and custom loader integrations",
   "type": "commonjs",
   "main": "./source-map-support.js",
@@ -158,7 +158,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@jridgewell/trace-mapping": "npm:@stackline/trace-mapping@1.0.0"
+    "@jridgewell/trace-mapping": "npm:@stackline/trace-mapping@1.0.2"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.18.5",
@@ -168,10 +168,14 @@
     "c8": "12.0.0",
     "esbuild": "0.28.2",
     "eslint": "10.9.1",
-    "path-browserify": "npm:@stackline/path-browserify@1.0.0",
+    "path-browserify": "npm:@stackline/path-browserify@1.0.2",
     "publint": "0.3.24",
     "source-map-support-upstream": "npm:source-map-support@0.5.21",
     "typescript": "7.0.2",
     "typescript-3-9": "npm:typescript@3.9.10"
+  },
+  "overrides": {
+    "glob@>=9 <14.0.3": "14.0.3",
+    "minimatch@>=7 <11.0.4": "11.0.4"
   }
 }

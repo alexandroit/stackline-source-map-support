@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.5 - 2026-11-04
+
+- Refresh published Stackline aliases and the development dependency closure.
+- Use patched current Node.js release gates while preserving historical runtime and compiler coverage.
+- Check package and documentation versions against the release manifest.
+
 ## 1.0.2 - 2026-09-29
 
 - Replace `@jridgewell/trace-mapping` with exact alias `npm:@stackline/trace-mapping@1.0.0`, preserving existing import names.

@@ -35,3 +35,10 @@ from all four bundled materials.
 differential tests. TypeScript 3.9 and current TypeScript are both test-only
 declaration gates. Build, lint, coverage, package-analysis, and audit tools are
 development-only and locked in `package-lock.json`.
+
+## 2026-11-04 security refresh
+
+The installed trace-mapping alias and bundled path-browserify alias now use
+currently published Stackline 1.0.2. The lockfile and SBOM retain exact runtime
+and bundled identities. The release and audit toolchain uses Node24.22.2;
+historical compatibility lanes remain independently tested.

@@ -6,7 +6,8 @@ const metadata = JSON.parse(await readFile(new URL('package.json', root), 'utf8'
 const decision = JSON.parse(await readFile(new URL('decision.json', root), 'utf8'))
 
 assert.equal(metadata.name, '@stackline/source-map-support')
-assert.equal(metadata.version, '1.0.2')
+assert.match(metadata.version, /^\d+\.\d+\.\d+$/)
+assert.ok((await readFile(new URL('CHANGELOG.md', root), 'utf8')).includes(`## ${metadata.version} - `))
 assert.equal(metadata.license, 'MIT')
 assert.equal(metadata.engines.node, '>=14.15.1')
 assert.equal(decision.decision, 'GO')

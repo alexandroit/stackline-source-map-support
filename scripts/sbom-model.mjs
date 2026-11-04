@@ -1,14 +1,14 @@
 import assert from 'node:assert/strict'
 
 export const installedProduction = [
-  ['@stackline/trace-mapping', '1.0.0', '@jridgewell/trace-mapping'],
+  ['@stackline/trace-mapping', '1.0.2', '@jridgewell/trace-mapping'],
   ['@jridgewell/resolve-uri', '3.1.2'],
   ['@jridgewell/sourcemap-codec', '1.6.0']
 ]
 
 export const bundledBrowserMaterial = [
   ...installedProduction,
-  ['@stackline/path-browserify', '1.0.0', 'path-browserify']
+  ['@stackline/path-browserify', '1.0.2', 'path-browserify']
 ]
 
 const npmPurl = (name, version) => `pkg:npm/${name.split('/').map(encodeURIComponent).join('/')}@${encodeURIComponent(version)}`
@@ -45,10 +45,10 @@ export function createSbom ({ lock, manifest, sourceCommit, timestamp }) {
   })
 
   const rootRef = componentRef(manifest.name, manifest.version)
-  const traceRef = componentRef('@stackline/trace-mapping', '1.0.0')
+  const traceRef = componentRef('@stackline/trace-mapping', '1.0.2')
   const resolveRef = componentRef('@jridgewell/resolve-uri', '3.1.2')
   const codecRef = componentRef('@jridgewell/sourcemap-codec', '1.6.0')
-  const pathBrowserifyRef = componentRef('@stackline/path-browserify', '1.0.0')
+  const pathBrowserifyRef = componentRef('@stackline/path-browserify', '1.0.2')
   const repository = manifest.repository.url.replace(/^git\+/, '')
   const sbom = {
     bomFormat: 'CycloneDX',
